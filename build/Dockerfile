@@ -30,7 +30,8 @@ RUN curl -fsSLo /tmp/kubectl https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/${
 
 
 
-FROM ghcr.io/openclaw/openclaw:2026.3.24
+ARG OPENCLAW_IMAGE_TAG=2026.3.24
+FROM ghcr.io/openclaw/openclaw:${OPENCLAW_IMAGE_TAG}
 
 COPY --from=builder /tmp/helm /usr/local/bin/helm
 COPY --from=builder /tmp/kubectl /usr/local/bin/kubectl
