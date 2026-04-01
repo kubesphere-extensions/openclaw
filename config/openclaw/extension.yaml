@@ -21,16 +21,16 @@ sources:
 kubeVersion: ">=1.26.0-0"
 ksVersion: ">=4.2.0-0"
 maintainers:
-  - name: "Clawdbot Team"
+  - name: "Peter Steinberger & community"
     email: ""
     url: "https://openclaw.ai/"
 provider:
   zh:
-    name: "Clawdbot Team"
+    name: "Peter Steinberger & community"
     email: ""
     url: "https://openclaw.ai/"
   en:
-    name: "Clawdbot Team"
+    name: "Peter Steinberger & community"
     email: ""
     url: "https://openclaw.ai/"
 icon: ./static/favicon.svg
