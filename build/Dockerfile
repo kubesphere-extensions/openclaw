@@ -1,3 +1,5 @@
+ARG OPENCLAW_IMAGE_TAG=2026.3.24
+
 # ---------- Build stage ----------
 FROM debian:bookworm-slim AS builder
 
@@ -27,10 +29,6 @@ RUN curl -fsSLo /tmp/kubectl https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/${
     curl -fsSLo /tmp/kubectl.sha256 https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/${TARGETOS}/${TARGETARCH}/kubectl.sha256 && \
     echo "$(cat /tmp/kubectl.sha256)  /tmp/kubectl" | sha256sum -c - && \
     chmod +x /tmp/kubectl
-
-
-
-ARG OPENCLAW_IMAGE_TAG=2026.3.24
 FROM ghcr.io/openclaw/openclaw:${OPENCLAW_IMAGE_TAG}
 
 COPY --from=builder /tmp/helm /usr/local/bin/helm
